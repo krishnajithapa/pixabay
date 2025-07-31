@@ -39,7 +39,7 @@ extension DioApiExtensions on DioClient {
         );
       }
 
-      return Right(mapper!(data[0]['data']));
+      return Right(mapper!(data));
     } on DioException catch (e) {
       return Left(
         Failure(

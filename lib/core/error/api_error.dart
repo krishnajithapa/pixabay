@@ -1,8 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'api_error.freezed.dart';
 part 'api_error.g.dart';
 
-@JsonSerializable()
+@freezed
 class ApiError with _$ApiError {
   const factory ApiError({required String error, required String message}) =
       _ApiError;
