@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         child: MaterialApp(
           navigatorKey: navigatorKey,
+          debugShowCheckedModeBanner: false,
           theme: darkTheme,
           home: const HomePage(),
         ),
