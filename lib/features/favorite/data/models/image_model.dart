@@ -6,6 +6,7 @@ class ImageModel extends ImageEntity {
     required super.previewUrl,
     required super.fullImageUrl,
     required super.imageSize,
+    required super.user,
   });
 
   factory ImageModel.fromJson(Map<String, dynamic> json) {
@@ -17,6 +18,7 @@ class ImageModel extends ImageEntity {
           json['imageSize'] is int
               ? json['imageSize']
               : int.tryParse(json['imageSize']?.toString() ?? '') ?? 0,
+      user: json['user'] ?? '',
     );
   }
 

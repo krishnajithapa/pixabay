@@ -6,4 +6,6 @@ import 'service_locator.config.dart'; // generated
 final locator = GetIt.instance;
 
 @InjectableInit(preferRelativeImports: true)
-void setupServiceLocator() => locator.init();
+Future<void> setupServiceLocator() async {
+  await locator.init();
+}

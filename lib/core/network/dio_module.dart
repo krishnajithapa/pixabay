@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pixabay/core/constants/app_constants.dart';
 import 'package:pixabay/core/network/alice_interceptor.dart';
@@ -22,11 +21,7 @@ abstract class DioModule {
     PrettyDioLogger logger,
     AliceInterceptor alice,
   ) {
-    final isDebugMode = kDebugMode;
-    return [
-      if (isDebugMode) logger,
-      if (isDebugMode) alice.alice.getDioInterceptor(),
-    ];
+    return [logger, alice.alice.getDioInterceptor()];
   }
 
   @lazySingleton

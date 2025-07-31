@@ -1,36 +1,42 @@
 part of "add_favorite_bloc.dart";
 
-abstract class HomeState extends Equatable {
-  const HomeState();
+abstract class AddFavoriteState extends Equatable {
+  const AddFavoriteState();
 }
 
-class HomeInitial extends HomeState {
+class AddFavoriteInitial extends AddFavoriteState {
   @override
   List<Object?> get props => [];
 }
 
-class HomeLoading extends HomeState {
+class AddFavoriteLoading extends AddFavoriteState {
   @override
   List<Object?> get props => [];
 }
 
-class HomeLoaded extends HomeState {
+class AddFavoriteLoaded extends AddFavoriteState {
   final List<ImageEntity> images;
+  final List<String> favoriteIds;
+  const AddFavoriteLoaded({required this.images, this.favoriteIds = const []});
 
-  const HomeLoaded({required this.images});
-
-  HomeLoaded copyWith({List<ImageEntity>? images}) {
-    return HomeLoaded(images: images ?? this.images);
+  AddFavoriteLoaded copyWith({
+    List<ImageEntity>? images,
+    List<String>? favoriteIds,
+  }) {
+    return AddFavoriteLoaded(
+      images: images ?? this.images,
+      favoriteIds: favoriteIds ?? this.favoriteIds,
+    );
   }
 
   @override
-  List<Object?> get props => [images];
+  List<Object?> get props => [images, favoriteIds];
 }
 
-class HomeError extends HomeState {
+class AddFavoriteError extends AddFavoriteState {
   final String message;
 
-  const HomeError(this.message);
+  const AddFavoriteError(this.message);
 
   @override
   List<Object?> get props => [message];

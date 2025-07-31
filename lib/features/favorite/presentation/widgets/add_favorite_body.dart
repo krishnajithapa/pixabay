@@ -52,20 +52,27 @@ class _AddFavoriteBodyState extends State<AddFavoriteBody> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AddFavoriteBloc, HomeState>(
-      builder: (context, state) {
-        if (state is HomeLoading) {
-          return const Center(child: CircularProgressIndicator());
-        } else if (state is HomeError) {
-          _isLoading = false; // Reset loading state on error
-          return Center(child: Text(state.message));
-        } else if (state is HomeLoaded) {
-          _isLoading = false; // Reset loading state on error
-          return ImageGrid(images: state.images, controller: _scrollController);
-        } else {
-          return Center(child: Text("Search Something to begin with!"));
-        }
-      },
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: BlocBuilder<AddFavoriteBloc, AddFavoriteState>(
+        builder: (context, state) {
+          if (state is AddFavoriteLoading) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (state is AddFavoriteError) {
+            _isLoading = false; // Reset loading state on error
+            return Center(child: Text(state.message));
+          } else if (state is AddFavoriteLoaded) {
+            _isLoading = false; // Reset loading state on error
+            return ImageGrid(
+              images: state.images,
+              favoriteIds: state.favoriteIds,
+              controller: _scrollController,
+            );
+          } else {
+            return Center(child: Text("Search Something to begin with!"));
+          }
+        },
+      ),
     );
   }
 }

@@ -1,0 +1,65 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "2:7068477907920091171",
+      "lastPropertyId": "6:5167279756182735626",
+      "name": "ObjectBoxImageModel",
+      "properties": [
+        {
+          "id": "1:2616796721641679743",
+          "name": "obxId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8364377287993831713",
+          "name": "id",
+          "type": 9
+        },
+        {
+          "id": "3:7618213239799024060",
+          "name": "previewUrl",
+          "type": 9
+        },
+        {
+          "id": "4:1345418221031562908",
+          "name": "fullImageUrl",
+          "type": 9
+        },
+        {
+          "id": "5:8565835740229778635",
+          "name": "imageSize",
+          "type": 6
+        },
+        {
+          "id": "6:5167279756182735626",
+          "name": "user",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:7068477907920091171",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [
+    6201347194107509287
+  ],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    2469297558669051360,
+    1627902742782191690,
+    5240027010307251637,
+    1619045839398612784,
+    5528661801473460968
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
